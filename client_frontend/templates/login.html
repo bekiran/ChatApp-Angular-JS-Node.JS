@@ -1,0 +1,45 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<div class="body">
+    <form name="myForm" ng-controller="controlLogin">
+        <div class="login">
+            <div class="login-header">
+                <h2>Sign in</h2>
+            </div>
+            <div class="login-form">
+                <h3>Email id:</h3>
+                <input type="email" ng-model="email" name="email" ng-show="email" placeholder="Email id" required
+                    autocomplete="on" required>
+                <!-- <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid ">
+                     <span ng-show="myForm.email.$error.required && myForm.email.$touched">Please enter Email id</span>
+                    <span ng-show="myForm.email.$error.email">Invalid Email id</span> 
+                </span> -->
+                <br>
+                <h3>Password:</h3>
+                <input type="password" placeholder="Password" />
+                <br>
+                <!-- <input type="button" value="Login" class="login-button" /> -->
+                <br>
+                <!-- <a class="sign-up">Sign Up!</a> -->
+                <div>
+                    <br>
+                    <button type="button" class="login-button">Sign in</button>
+                    <br>
+                    <p class="login-signup">Don't have an account? &nbsp;<a class="sign-up" href="../templates/register.html">Sign up</a></p>
+                </div>
+            </div>
+
+
+
+            <form name="myForm">
+
+            </form>
+        </div>
+    </form>
+</div>
+
+</html>

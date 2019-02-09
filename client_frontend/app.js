@@ -7,8 +7,14 @@ app.config(function($stateProvider, $urlRouterProvider){
 
     .state('login', {
         url: '/login',
-        templatesUrl: 'templates/login.html',
-        // controller: 'userControl'
+        templateUrl: 'templates/login.html',
+        controller: 'userControl'
 
+    })
+
+    .state('register',{
+        url: '/register',
+        templateUrl: 'templates/register.html',
+        controller: 'userControl'
     })
 })
