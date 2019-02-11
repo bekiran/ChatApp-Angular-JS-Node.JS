@@ -9,10 +9,21 @@
   "author": "kiran",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.7.0",
+    "angular-animate": "^1.7.7",
+    "angular-aria": "^1.7.7",
     "angular-material": "http://github.com/angular/bower-material/tarball/v1.1.9",
+    "angular-messages": "^1.7.7",
     "angularjs": "0.0.1",
+    "angularjs-socket-io": "^0.7.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mongoose": "^5.4.10"
+    "express-validator": "^5.3.1",
+    "install-peerdeps": "^1.10.2",
+    "jsonwebtoken": "^8.4.0",
+    "mdi": "^2.2.43",
+    "mongoose": "^5.4.11",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0"
   }
 }

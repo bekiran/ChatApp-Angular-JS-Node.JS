@@ -17,4 +17,10 @@ app.config(function($stateProvider, $urlRouterProvider){
         templateUrl: 'templates/register.html',
         controller: 'userControl'
     })
+
+    .state('dashboard',{
+        url: '/dashboard',
+        templateUrl: 'templates/dashboard.html',
+        controller: 'userControl'
+    })
 })
