@@ -13,19 +13,41 @@
 
             <div class="register-form">
                 <label>First Name</label><br>
-                <input type="text" placeholder="First Name" /><br>
+                <input type="text" name="firstname" ng-model="firstname" placeholder="First Name" required autocomplete="off" required />
+
+                <!-- <span style="color:red" ng-show="myForm.firstname.$touched&&myForm.firstname.$dirty && myForm.firstname.$invalid">
+                    <span ng-show="myForm.firstname.$error.required">FirstName is required.</span>
+                </span> -->
+                <br>
+
+
                 <label>Last Name</label><br>
-                <input type="text" placeholder="Last Name" /><br>
+                <input type="text" name="lastname"  ng-model="lastname" placeholder="Last Name" />
+                <!-- <span style="color:red" ng-show="myForm.lastname.$touched&&myForm.lastname.$dirty && myForm.lastname.$invalid">
+                    <span ng-show="myForm.lastname.$error.required">lastName is required.</span>
+                </span> -->
+                <br>
+                 
+
                 <label>Email id</label><br>
-                <input type="email" placeholder="Email id" /><br>
+                <input type="email" name="email" ng-model="email" placeholder="Email id" />
+                <!-- <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid ">
+                    <span ng-show="myForm.email.$error.required">Email is required.</span>
+                    <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+                </span> -->
+                <br>
+
+
                 <label>Password</label><br>
-                <input type="password" placeholder="Password" /><br>
+                <input type="password" name="password" ng-model="password" id="password" placeholder="Password" /><br>
+
+
                 <label>Conform Password</label><br>
-                <input type="password" placeholder="Confirm Password"/><br>
+                <input type="password" name="confirmPassword" ng-model="confirmPassword" id="confirm_password" placeholder="Confirm Password"/><br>
 
                 <div>
                     <br>
-                    <button type="button" class="register-button">Register</button>
+                    <button type="submit" value="Sign up" ng-disabled="myForm.$invalid" class="register-button"  ng-click="register">Register</button>
                     <br>
                     <p class="login-signup">Already have an account? &nbsp;<a class="sign-up" href="../templates/login.html">Sign in</a></p>
                 </div>
@@ -33,7 +55,7 @@
             </div>
     </form>
 </div>
-
+<!-- btn btn-primary btn-block btn-lg -->
 
 </div>
 

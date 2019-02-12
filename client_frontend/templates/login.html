@@ -3,7 +3,9 @@
 <head>
 
     <link rel="stylesheet" href="../css/main.css">
+
 </head>
+
 <div class="body">
 
     <form name="myForm" ng-controller="controlLogin">
@@ -15,8 +17,42 @@
             <div class="login-form">
                 <h3>Email id:</h3>
 
+                <!-- <form name="myForm" ng-controller="Ctrl">
+                    Email: <input type="email" name="input" ng-model="text" ng-pattern="emailFormat" required>
+                    <br/><br/>
+                    <span class="error" ng-show="myForm.input.$error.required">
+                      Required!
+                    </span><br/>
+                    <span class="error" ng-show="myForm.input.$error.pattern">
+                      Not valid email!
+                    </span>
+                    <br><br>
+                    <tt>text = {{text}}</tt><br/>
+                    <tt>myForm.input.$valid = {{myForm.input.$valid}}</tt><br/>
+                    <tt>myForm.input.$error = {{myForm.input.$error}}</tt><br/>
+                    <tt>myForm.$valid = {{myForm.$valid}}</tt><br/>
+                    <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br/>
+                    <tt>myForm.$error.pattern = {{!!myForm.$error.pattern}}</tt><br/>
+                  </form> -->
+
                 <input type="email" ng-model="email" name="email" ng-show="email" placeholder="Email id" required
                     autocomplete="on" required>
+
+                <!-- <br />
+                <span class="error" ng-show="myForm.input.$error.required">
+                    Required!</span>
+                <span class="error" ng-show="myForm.input.$error.email">
+                    Not valid email!</span>
+                <br>
+                <tt>text = {{text}}</tt><br />
+                <tt>myForm.input.$valid = {{myForm.input.$valid}}</tt><br />
+                <tt>myForm.input.$error = {{myForm.input.$error}}</tt><br />
+                <tt>myForm.$valid = {{myForm.$valid}}</tt><br />
+                <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br />
+                <tt>myForm.$error.email = {{!!myForm.$error.email}}</tt>
+                <br /> -->
+
+                
                 <!-- <span ng-show="myForm.email.$dirty && myForm.email.$invalid ">
                      <span ng-show="myForm.email.$error.required && myForm.email.$touched">Please enter Email id</span>
                     <span ng-show="myForm.email.$error.email">Invalid Email id</span> 
@@ -25,11 +61,16 @@
                 <br>
                 <h3>Password:</h3>
                 <input type="password" placeholder="Password" ng-model="password" />
-                <br>
+                <!-- <br> -->
+
+                <div class="checkbox">
+                    <label><input type="checkbox"> Remember me</label>
+                </div>
 
                 <div>
                     <br>
-                    <button type="button" class="login-button">Sign in</button>
+                    <button type="submit" value="log In" ng-click="login()" class="login-button">Sign in</button>
+                    <!-- <font color="red">{{loginMessage}}</font> <br> -->
                     <br>
                     <p class="login-signup">Don't have an account? &nbsp;<a class="sign-up"
                             href="../templates/register.html">Sign up</a></p>

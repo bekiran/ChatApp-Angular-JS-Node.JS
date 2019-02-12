@@ -22,5 +22,11 @@ app.config(function($stateProvider, $urlRouterProvider){
         url: '/dashboard',
         templateUrl: 'templates/dashboard.html',
         controller: 'userControl'
-    })
-})
+    });
+    
+});
+app.service('SocketService', ['socketFactory', function SocketService (socketFactory){
+    return socketFactory({
+        ioSocket: io.connect('http://localhost:3000')
+    });
+}]);
