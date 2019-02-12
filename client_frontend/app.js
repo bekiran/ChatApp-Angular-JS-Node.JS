@@ -3,25 +3,23 @@ var app = angular.module('chatapp',['ui.router']);
 app.config(function($stateProvider, $urlRouterProvider){
 
     $urlRouterProvider.otherwise('login');
-    $stateProvider
-
-    .state('login', {
+    $stateProvider.state('login', {
         url: '/login',
         templateUrl: 'templates/login.html',
-        controller: 'userControl'
+        controller: 'controlLogin'
 
     })
 
     .state('register',{
         url: '/register',
         templateUrl: 'templates/register.html',
-        controller: 'userControl'
+        controller: 'controlLogin'
     })
 
     .state('dashboard',{
         url: '/dashboard',
         templateUrl: 'templates/dashboard.html',
-        controller: 'userControl'
+       // controller: 'controlLogin'
     });
     
 });

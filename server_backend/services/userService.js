@@ -8,7 +8,7 @@ exports.register = (req, callback) => {
             return callback(null, data);
         }
     })
-}
+} 
 
 exports.login = (req, callback) => {
     userModel.login(req, (err, data) =>{
