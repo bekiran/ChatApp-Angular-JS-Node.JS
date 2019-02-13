@@ -59,19 +59,7 @@ module.exports.login = (req, res) => {
 
 }
 
-module.exports.getAllUser = (req, res) => {
-    userService.getAllUser((err, data) => {
-        if (err) {
-            return res.status(500).send({
-                message: err
-            });
-        } else {
-            return res.status(200).send({
-                message: data
-            });
-        }
-    })
-}
+
 
 
 

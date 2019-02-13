@@ -72,15 +72,7 @@ usermodel.prototype.login = (body, callback) => {
 }
 
 
-usermodel.prototype.getAllUser = (callback) => {
-    user.find({}, (err, data) => {
-        if (err) {
-            callback(err);
-        } else {
-            callback(null, data);
-        }
-    })
-}
+
 
 
 module.exports = new usermodel();

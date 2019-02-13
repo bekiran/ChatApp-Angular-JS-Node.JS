@@ -6,20 +6,21 @@
     background-size: cover;
     overflow: auto;
     font-family: 'Times New Roman',
-
-    
 }
 .login{
     margin: 0 auto;
     max-width: 500px;
 }
+/* .error{
+    color: red;
+} */
 .login-header{
     color: #fff;
     text-align: center;
     font-size: 300%
 }
 .login-form{
-    border: .5px solid #fff;
+    border: 0.5px solid #fff;
     /* background: #4facff; */
     border-radius: 10px;
     box-shadow: 0px 0px 0px #000;
@@ -42,7 +43,24 @@
     
     
 }
-.login input[type="email"],
+.login input[type="email"]{
+    max-width: 400px;
+    width: 80%;
+    line-height: 3em;
+    font-family: 'Ubuntu';
+    border-radius: 10px;
+
+    stroke-dasharray: 73.50196075439453;
+    /* position: absolute; */
+    transform-origin: 0 100%;
+    top: 16rem;
+    left: 13.5rem;
+    height: 2.8rem;
+    background: #fff;
+    text-align: center;
+    animation: animatePath 2s 0.5s forwards;
+    background: linear-gradient(to bottom, rgba(253, 253, 253, 0.993) 0%, rgba(251, 253, 253, 0) 100%);
+}
 .login input[type="password"]
 {
     max-width: 400px;
@@ -119,8 +137,44 @@
     
 
 }
-.register input[type="text"],
-.register input[type="email"],
+.register input[type="text"]{
+    max-width: 400px;
+    width: 70%;
+    line-height: 1em;
+    font-family: 'Ubuntu';
+    border-radius: 10px;
+
+    stroke-dasharray: 73.50196075439453;
+    /* position: absolute; */
+    transform-origin: 0 100%;
+    top: 16rem;
+    left: 13.5rem;
+    height: 2.8rem;
+    background: #fff;
+    text-align: center;
+    animation: animatePath 2s 0.5s forwards;
+    background: linear-gradient(to bottom, rgba(253, 253, 253, 0.993) 0%, rgba(251, 253, 253, 0) 100%);
+    
+}
+.register input[type="email"]{
+    max-width: 400px;
+    width: 70%;
+    line-height: 1em;
+    font-family: 'Ubuntu';
+    border-radius: 10px;
+
+    stroke-dasharray: 73.50196075439453;
+    /* position: absolute; */
+    transform-origin: 0 100%;
+    top: 16rem;
+    left: 13.5rem;
+    height: 2.8rem;
+    background: #fff;
+    text-align: center;
+    animation: animatePath 2s 0.5s forwards;
+    background: linear-gradient(to bottom, rgba(253, 253, 253, 0.993) 0%, rgba(251, 253, 253, 0) 100%);
+    
+}
 .register input[type="password"]
 
 {
@@ -179,10 +233,49 @@
 .dashboard-body{
     position: relative;
     height: 100%;
-    background-image: url('https://i.pinimg.com/236x/93/16/86/93168696fa839fe0233ceda3952b14c7.jpg');
+    background-image: url('https://3dprinterchat.com/wp-content/uploads/2016/01/HD-Background-Wallpapers-8.jpg');
     background-size: cover;
     overflow: auto;
     font-family: 'Times New Roman',
 
     
 }
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Times New Roman';
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+    display: none;
+  }
+
+
+  

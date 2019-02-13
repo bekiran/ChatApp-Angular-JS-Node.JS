@@ -3,9 +3,12 @@ const http = require('http');
 //require socket IO
 var socketIO = require('socket.io');
 //require express
-const express = require('express')
+const express = require('express');
+const cors = require('cors');
+
 var chatController = require('./controller/chatController')
 const app = express();
+app.use(cors())
 const server = http.createServer(app);
 var io = socketIO(server);
 const bodyParser = require('body-parser');

@@ -2,7 +2,6 @@ var app = angular.module('chatapp',['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider){
 
-    $urlRouterProvider.otherwise('login');
     $stateProvider.state('login', {
         url: '/login',
         templateUrl: 'templates/login.html',
@@ -13,7 +12,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     .state('register',{
         url: '/register',
         templateUrl: 'templates/register.html',
-        controller: 'controlLogin'
+        controller: 'controlRegister'
     })
 
     .state('dashboard',{
@@ -21,10 +20,7 @@ app.config(function($stateProvider, $urlRouterProvider){
         templateUrl: 'templates/dashboard.html',
        // controller: 'controlLogin'
     });
+     $urlRouterProvider.otherwise('login');
+
     
 });
-app.service('SocketService', ['socketFactory', function SocketService (socketFactory){
-    return socketFactory({
-        ioSocket: io.connect('http://localhost:3000')
-    });
-}]);

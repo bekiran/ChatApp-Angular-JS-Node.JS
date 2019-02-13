@@ -4,25 +4,31 @@
 
     <link rel="stylesheet" href="../css/main.css">
 </head>
-<div class="body">
+<div class="dashboard-body">
 
     <form name="myForm" ng-controller="controlLogin">
-        <div class="login">
-            <div class="login-header">
-                <h2>Welcome to chatApp</h2>
-            </div>
-            <iframe width="420" height="315"
-    src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
-    </iframe>
-         
 
 
-            <form name="myForm">
+        <div class="dashboard">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-            </form>
+                <div class="topnav" id="myTopnav">
+                  <a href="#home" class="active" ui-sref="login">Sign out</a>
+                  <a class="new-chat">New chat</a>
+                  <a class="contact">Contact</a>
+                  <!-- <a href="#about">About</a> -->
+                  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </div>
+            
+
+
+
+
         </div>
     </form>
-    
+
 </div>
 
 </html>

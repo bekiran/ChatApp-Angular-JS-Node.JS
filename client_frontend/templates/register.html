@@ -13,7 +13,8 @@
 
             <div class="register-form">
                 <label>First Name</label><br>
-                <input type="text" name="firstname" ng-model="firstname" placeholder="First Name" required autocomplete="off" required />
+                <input type="text" name="firstname" ng-model="firstname" placeholder="First Name" required
+                    autocomplete="off" required />
 
                 <!-- <span style="color:red" ng-show="myForm.firstname.$touched&&myForm.firstname.$dirty && myForm.firstname.$invalid">
                     <span ng-show="myForm.firstname.$error.required">FirstName is required.</span>
@@ -22,12 +23,12 @@
 
 
                 <label>Last Name</label><br>
-                <input type="text" name="lastname"  ng-model="lastname" placeholder="Last Name" />
+                <input type="text" name="lastname" ng-model="lastname" placeholder="Last Name" />
                 <!-- <span style="color:red" ng-show="myForm.lastname.$touched&&myForm.lastname.$dirty && myForm.lastname.$invalid">
                     <span ng-show="myForm.lastname.$error.required">lastName is required.</span>
                 </span> -->
                 <br>
-                 
+
 
                 <label>Email id</label><br>
                 <input type="email" name="email" ng-model="email" placeholder="Email id" />
@@ -39,23 +40,26 @@
 
 
                 <label>Password</label><br>
-                <input type="password" name="password" ng-model="password" id="password" placeholder="Password" /><br>
+                <input type="password" name="password" ng-model="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/><br>
+                
 
 
                 <label>Conform Password</label><br>
-                <input type="password" name="confirmPassword" ng-model="confirmPassword" id="confirm_password" placeholder="Confirm Password"/><br>
+                <input type="password" name="confirmPassword" ng-model="confirmPassword" id="confirm_password"
+                    placeholder="Confirm Password" /><br>
 
                 <div>
                     <br>
-                    <button type="submit" value="Sign up" ng-disabled="myForm.$invalid" class="register-button"  ng-click="register">Register</button>
-                    <br>
-                    <p class="login-signup">Already have an account? &nbsp;<a class="sign-up" href="../templates/login.html">Sign in</a></p>
+                    <input type="submit" value="Sign up" ng-disabled="myForm.$invalid" class="register-button"
+                        ng-click="register()"><br>
+
+                    <p class="register-signup">Already have an account? <span ui-sref="login">
+                            <a href="">Sign in</a></span> </p>
                 </div>
 
             </div>
     </form>
 </div>
-<!-- btn btn-primary btn-block btn-lg -->
 
 </div>
 
