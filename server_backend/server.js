@@ -1,12 +1,10 @@
-//require the http server
+
 const http = require('http');
-//require socket IO
 var socketIO = require('socket.io');
-//require express
 const express = require('express');
 const cors = require('cors');
 
-var chatController = require('./controller/chatController')
+
 const app = express();
 app.use(cors())
 const server = http.createServer(app);
@@ -21,10 +19,10 @@ const mongoose = require('mongoose');
 var expressValidator = require('express-validator')
 app.use(expressValidator());
 
-
 app.use('/', route);
 app.use(express.static('../client_frontend'));
-//connecting to the database
+
+//connection to the mongo database
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
 }).then(() =>{
@@ -36,3 +34,8 @@ mongoose.connect(dbConfig.url, {
 server.listen(3000, ()=>{
     console.log("Server is listening on port 3000");
 });
+
+// var express = require('express');
+// app = express;
+// port = process.env.PORT || 3000;
+// mongoose = require(mongoose)

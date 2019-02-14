@@ -4,6 +4,8 @@
 
     <link rel="stylesheet" href="../css/main.css">
 
+    <title>Chat app User Log-in</title>
+
 </head>
 
 <div class="body">
@@ -15,42 +17,28 @@
             </div>
 
             <div class="login-form">
+                <P class="greet">Welcome, Please Login</P>
                 <h3>Email id:</h3>
-                
-                <input type="email" ng-model="email" name="email" 
-                    placeholder="Email id" required autocomplete="on" required>
-                
-                <!-- <span class="error" ng-show="myForm.input.$error.required">
-                    Required!
-                </span><br />
-                <span class="error" ng-show="myForm.input.$error.pattern">
-                    Not valid email!
-                </span>
 
-             
-                <code>text = {{text}}</code><br />
-                <code>myForm.input.$valid = {{myForm.input.$valid}}</code><br />
-                <code>myForm.input.$error = {{myForm.input.$error}}</code><br />
-                <code>myForm.$valid = {{myForm.$valid}}</code><br />
-                <code>myForm.$error.required = {{!!myForm.$error.required}}</code><br />
-                <code>myForm.$error.email = {{!!myForm.$error.email}}</code>
-                <br />  -->
-
-
-
+                <input type="email" ng-model="email" name="email" placeholder="Email id" required autocomplete="on"
+                    required>
 
                 <br>
                 <h3>Password:</h3>
                 <input type="password" placeholder="Password" ng-model="password" />
                 <!-- <br> -->
 
-                <div class="checkbox">
-                    <label><input type="checkbox"> Remember me</label>
+                <br>
+                <div class="forgot-password">
+                    <label class="login-signup">Can't sign in?
+                        <span ui-sref="forgotPassword">
+                            <a href="">Forgot password</a></span></label>
                 </div>
 
                 <div>
                     <br>
                     <button type="submit" value="log In" ng-click="login()" class="login-button">Sign in</button>
+                    <br>    
                     <font color="red">{{loginMessage}}</font> <br>
 
                     <p class="login-signup">Already have an account?

@@ -9,6 +9,20 @@ app.config(function($stateProvider, $urlRouterProvider){
 
     })
 
+    $stateProvider.state('forgotPassword', {
+        url: '/forgotPassword',
+        templateUrl: 'templates/forgotPassword.html',
+        // controller: 'controlLogin'
+
+    })
+
+    $stateProvider.state('resetPassword', {
+        url: '/resetPassword',
+        templateUrl: 'templates/resetPassword.html',
+        // controller: 'controlLogin'
+
+    })
+
     .state('register',{
         url: '/register',
         templateUrl: 'templates/register.html',
@@ -18,7 +32,6 @@ app.config(function($stateProvider, $urlRouterProvider){
     .state('dashboard',{
         url: '/dashboard',
         templateUrl: 'templates/dashboard.html',
-       // controller: 'controlLogin'
     });
      $urlRouterProvider.otherwise('login');
 

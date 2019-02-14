@@ -163,3 +163,21 @@ module.exports.getUSerMsg = (req, res) => {
         }
     })
 } */
+
+
+
+ /* <span class="error" ng-show="myForm.input.$error.required">
+Required!
+</span><br />
+<span class="error" ng-show="myForm.input.$error.pattern">
+Not valid email!
+</span>
+
+
+<code>text = {{text}}</code><br />
+<code>myForm.input.$valid = {{myForm.input.$valid}}</code><br />
+<code>myForm.input.$error = {{myForm.input.$error}}</code><br />
+<code>myForm.$valid = {{myForm.$valid}}</code><br />
+<code>myForm.$error.required = {{!!myForm.$error.required}}</code><br />
+<code>myForm.$error.email = {{!!myForm.$error.email}}</code>
+<br />   */

@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="../css/main.css">
+    <title>user register</title>
 </head>
 
 <div class="register-body">
@@ -16,37 +17,35 @@
                 <input type="text" name="firstname" ng-model="firstname" placeholder="First Name" required
                     autocomplete="off" required />
 
-                <!-- <span style="color:red" ng-show="myForm.firstname.$touched&&myForm.firstname.$dirty && myForm.firstname.$invalid">
-                    <span ng-show="myForm.firstname.$error.required">FirstName is required.</span>
-                </span> -->
+
                 <br>
 
 
                 <label>Last Name</label><br>
                 <input type="text" name="lastname" ng-model="lastname" placeholder="Last Name" />
-                <!-- <span style="color:red" ng-show="myForm.lastname.$touched&&myForm.lastname.$dirty && myForm.lastname.$invalid">
-                    <span ng-show="myForm.lastname.$error.required">lastName is required.</span>
-                </span> -->
+
                 <br>
 
 
                 <label>Email id</label><br>
                 <input type="email" name="email" ng-model="email" placeholder="Email id" />
-                <!-- <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid ">
-                    <span ng-show="myForm.email.$error.required">Email is required.</span>
-                    <span ng-show="myForm.email.$error.email">Invalid email address.</span>
-                </span> -->
+
                 <br>
 
 
                 <label>Password</label><br>
-                <input type="password" name="password" ng-model="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/><br>
-                
+                <input type="password" name="password" ng-model="password" id="password"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    required /><br>
+
 
 
                 <label>Conform Password</label><br>
                 <input type="password" name="confirmPassword" ng-model="confirmPassword" id="confirm_password"
-                    placeholder="Confirm Password" /><br>
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Confirm Password"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    required /><br>
 
                 <div>
                     <br>
@@ -56,8 +55,10 @@
                     <p class="register-signup">Already have an account? <span ui-sref="login">
                             <a href="">Sign in</a></span> </p>
                 </div>
-
             </div>
+
+        </div>
+
     </form>
 </div>
 

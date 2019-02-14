@@ -9,15 +9,22 @@
 }
 .login{
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 450px;
+    padding: 0px;
+    align-content: center;
 }
-/* .error{
-    color: red;
-} */
+.greet{
+    font-family: 'Times New Roman';
+    color: rgb(238, 36, 130);;
+    font-size: 100%;
+    font-weight: bolder
+    
+}
+
 .login-header{
     color: #fff;
     text-align: center;
-    font-size: 300%
+    font-size: 250%
 }
 .login-form{
     border: 0.5px solid #fff;
@@ -81,8 +88,9 @@
     background: linear-gradient(to bottom, rgba(253, 253, 253, 0.993) 0%, rgba(251, 253, 253, 0) 100%);
     
 }
-.checkbox{
-    margin-left: -57%
+.forgot-password{
+    text-align: center;
+    color: antiquewhite;
 }
 .login-button{
     margin-bottom: 10px;
@@ -96,8 +104,10 @@
     font-weight: bold;
     cursor: pointer;
     overflow: hidden;
-
-    
+   
+}
+.login-signup{
+    color: antiquewhite;
 }
 .sign-up{
     color: #f2f2f2;
@@ -278,4 +288,143 @@
   }
 
 
-  
+  /* forgot password */
+
+.forgot-title{
+    font-family: fantasy;
+    color: #fff;
+    text-align: center;
+    font-size: 300%
+}
+.forgot-password-body{
+    position: relative;
+    height: 100%;
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg');
+    background-size: cover;
+    overflow: auto;
+    font-family: 'Times New Roman',
+
+}
+.forgot-form{
+    box-sizing: border-box;
+    padding-top: 15px;
+    padding-bottom: 10%;
+    margin: 10% auto;
+    text-align: center;
+    font-family: 'Times New Roman';
+    background: linear-gradient(to bottom, rgba(47, 147, 228, 0.8) 0%, rgba(0,0,0,0.6) 100%);
+    transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+    transform: scale(1);
+    
+    
+}
+.forgot-form{
+    border: 0.5px solid #fff;
+    /* background: #4facff; */
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px #000;
+}
+.forgot-form h3{
+    text-align: left;
+    margin-left: 40px;
+    color: #fff;
+}
+.forgot{
+    margin: 0 auto;
+    max-width: 450px;
+    padding: 0px;
+    align-content: center;
+}
+.forgot input[type="email"]{
+    max-width: 400px;
+    width: 80%;
+    line-height: 3em;
+    font-family: 'Ubuntu';
+    border-radius: 10px;
+
+    stroke-dasharray: 73.50196075439453;
+    /* position: absolute; */
+    transform-origin: 0 100%;
+    top: 16rem;
+    left: 13.5rem;
+    height: 2.8rem;
+    background: #fff;
+    text-align: center;
+    animation: animatePath 2s 0.5s forwards;
+    background: linear-gradient(to bottom, rgba(253, 253, 253, 0.993) 0%, rgba(251, 253, 253, 0) 100%);
+}
+
+
+/* reset password */
+
+.reset-title{
+    font-family: fantasy;
+    color: #fff;
+    text-align: center;
+    font-size: 300%
+}
+.reset-body{
+    position: relative;
+    height: 100%;
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg');
+    background-size: cover;
+    overflow: auto;
+    font-family: 'Times New Roman',
+
+}
+.reset-form{
+    box-sizing: border-box;
+    padding-top: 15px;
+    padding-bottom: 10%;
+    margin: 10% auto;
+    text-align: center;
+    font-family: 'Times New Roman';
+    background: linear-gradient(to bottom, rgba(47, 147, 228, 0.8) 0%, rgba(0,0,0,0.6) 100%);
+    transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+    transform: scale(1);
+    
+    
+}
+.reset-form{
+    border: 0.5px solid #fff;
+    /* background: #4facff; */
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px #000;
+}
+.reset-form h3{
+    text-align: left;
+    margin-left: 40px;
+    color: #fff;
+}
+.reset{
+    margin: 0 auto;
+    max-width: 450px;
+    padding: 0px;
+    align-content: center;
+}
+.reset input[type="password"]{
+    max-width: 400px;
+    width: 80%;
+    line-height: 3em;
+    font-family: 'Ubuntu';
+    border-radius: 10px;
+
+    stroke-dasharray: 73.50196075439453;
+    /* position: absolute; */
+    transform-origin: 0 100%;
+    top: 16rem;
+    left: 13.5rem;
+    height: 2.8rem;
+    background: #fff;
+    text-align: center;
+    animation: animatePath 2s 0.5s forwards;
+    background: linear-gradient(to bottom, rgba(253, 253, 253, 0.993) 0%, rgba(251, 253, 253, 0) 100%);
+}
+.reset-password{
+    text-align: center;
+    color: antiquewhite;
+}
+
+.reset label{
+    color: antiquewhite
+} 
