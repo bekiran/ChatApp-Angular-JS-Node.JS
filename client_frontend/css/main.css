@@ -254,7 +254,7 @@
 
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #333;
+    background-color: rgb(54, 53, 53);
     overflow: hidden;
   }
   
@@ -272,13 +272,13 @@
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #ddd;
+    background-color: rgb(245, 90, 29);
     color: black;
   }
   
   /* Add an active class to highlight the current page */
   .active {
-    background-color: #4CAF50;
+    background-color: rgb(240, 40, 123);
     color: white;
   }
   
@@ -428,3 +428,5 @@
 .reset label{
     color: antiquewhite
 } 
+
+

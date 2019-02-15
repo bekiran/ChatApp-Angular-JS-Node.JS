@@ -2,33 +2,42 @@
 
 <head>
 
-    <link rel="stylesheet" href="../css/main.css">
-    <title>wellcome to chat</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <title>wellcome to chat</title>
 </head>
 <div class="dashboard-body">
 
-    <form name="myForm" ng-controller="controlLogin">
+  <form name="myForm" ng-controller="controlLogin">
 
 
-        <div class="dashboard">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="dashboard">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-                <div class="topnav" id="myTopnav">
-                  <a href="#home" class="active" ui-sref="login">Sign out</a>
-                  <a class="new-chat">New chat</a>
-                  <a class="contact">Contact</a>
-                  <!-- <a href="#about">About</a> -->
-                  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fa fa-bars"></i>
-                  </a>
-                </div>
-            
+      <div class="topnav" id="myTopnav">
+        <a href="#home" class="active" ui-sref="login">Sign out</a>
+        <a class="new-chat">New chat</a>
+        <a class="contact">Contact</a>
+        <a class="heading">Welcome to BridgeLabz Chat {{name}}</a>
+        <!-- <p name="{{firstname}}">welcome {{name}}</p> -->
+        <!-- <a href="#about">About</a> -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+
+      <body ng-controller="chatController">
+        
+      </body>
+      <ol>
+        Contacts
+      </ol>
+      
 
 
 
-
-        </div>
-    </form>
+    </div>
+  </form>
 
 </div>
 
