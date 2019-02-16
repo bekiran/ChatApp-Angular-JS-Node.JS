@@ -57,8 +57,33 @@ module.exports.login = (req, res) => {
         })
     }
 
-}
+};
 
+module.exports.forgotPassword = (req, res) =>{
+    req.checkBody('email','Email is not valid').isEmail();
+    var secret = "adcgfft";
+    var errors =req.validationErrors();
+    var response = {};
+    if (errors) {
+        response.success = false;
+        response.error = errors;
+        return res.status(422).send(response);
+    } else {
+        userService.forgotPassword(req.body, (err, data) => {
+            if (err) {
+                return res.status(500).send({
+                    message: err
+                });
+            } else {
+                var token = jwt.sign({ email: req.body.email, id: data[0]._id }, secret, { expiresIn: 300 });
+                return res.status(200).send({
+                    message: data,
+                    "token": token
+                });
+            }
+        })
+    }
+}
 
 
 

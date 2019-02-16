@@ -68,11 +68,23 @@ usermodel.prototype.login = (body, callback) => {
         } else {
             return callback("Invalid User ");
         }
-    })
+    });
 }
 
+usermodel.prototype.forgotPassword = (body, callback) => {
+    user.find({ 'email': body.email }, (err, data) => {
+        if (err) {
+            return callback(err);
+        } else if (data){
+            console.log(data)
 
-
+            return callback(null, data)
+        }
+        else {
+            return callback("Invalid User ");
+        }
+    });
+}
 
 
 module.exports = new usermodel();

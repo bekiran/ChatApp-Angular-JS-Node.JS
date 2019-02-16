@@ -20,6 +20,16 @@ exports.login = (req, callback) => {
     })
 }
 
+exports.forgotPassword = (req, callback) => {
+    userModel.forgotPassword(req, (err, data) =>{
+        if(err) {
+            return callback(err);
+        }else{
+            return callback(null, data);
+        }
+    })
+}
+
 exports.getAllUser = (req, callback) => {
     userModel.getAllUser(req, (err, data) =>{
         if(err) {
