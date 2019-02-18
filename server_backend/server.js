@@ -1,20 +1,53 @@
-'use strict'
+// 'use strict'
 // To include the HTTP module
 const http = require('http');
-// createServer() method to create an HTTP server
-
 // To include the File System module
 const fs = require('fs');
 const url = require('url')
-var socketIO = require('socket.io');
-const express = require('express');
-var chatController = require ('./controller/chatController');
-constserver = http.createServer(app);
-var io = require('socket.io')
-const cors = require('cors');
-const nodemailer = require('nodemailer')
+var express = require('express');
 const app = express();
 
+var socketIO = require('socket.io');
+var chatController = require('./controller/chatController');
+const server = http.createServer(app);
+var io = socketIO(server);
+
+//port number
+const port = 3000
+const database = require('./config/database.config')
+const mongoose = require('mongoose');
+const route = require('../server_backend/routes/routes');
+/*body-parser parses your request and converts it into a 
+format from which you can easily extract relevant information that you may need.*/
+const bodyParser = require('body-parser');
+
+/*Parses the text as URL encoded data (which is how browsers tend to send form data from regular forms set to POST)
+and exposes the resulting object (containing the keys and values) on req.body.*/
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Parses the text as JSON and exposes the resulting object on req.body.
+app.use(bodyParser.json());
+var expressValidator = require('express-validator')
+app.use(expressValidator());
+io.on('connection', (socket) => {
+    console.log("New user connected");
+
+    so.on('createMessage', (message) => {
+        chatController.message(message, (err, data) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log(message + " in server")
+                io.emit('newMessageSingle', message);
+            }
+        })
+        socket.on('disconnect', () => {
+            console.log("User is Disconnected")
+        });
+    });
+});
+
+app.use('/', route);
 
 // Import events module
 var events = require('events');
@@ -35,24 +68,16 @@ var eventEmitter = new events.EventEmitter();
 // var decode = jwt.decode(token, secret);
 // console.log(decode);
 
-
-
+const cors = require('cors');
 app.use(cors())
-const server = http.createServer(app);
-var io = socketIO(server);
-const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
-const route = require('../server_backend/routes/routes');
+// const server = http.createServer(app);
+var io = socketIO(server);
+
+
 const dbConfig = require('./config/database.config');
 const mongo = require('mongodb');
-const mongoose = require('mongoose');
-var expressValidator = require('express-validator')
-app.use(expressValidator());
 
-
-app.use('/', route);
 app.use(express.static('../client_frontend'));
 
 //connection to the mongo database
@@ -67,6 +92,8 @@ mongoose.connect(dbConfig.url, {
 server.listen(3000, () => {
     console.log("Server is listening on port 3000");
 });
+
+const nodemailer = require('nodemailer')
 
 app.get('/forgotPassword', function (req, res) {
     res.send('<form action="/passwordreset" method="POST">' +
