@@ -1,14 +1,13 @@
 <html>
 
 <head>
-
   <link rel="stylesheet" href="../css/main.css">
   <title>wellcome to chat</title>
 </head>
+
 <div class="dashboard-body">
 
-  <form name="myForm" ng-controller="controlLogin">
-
+  <form name="myForm" ng-controller="chatController">
 
     <div class="dashboard">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,7 +16,7 @@
         <a href="#home" class="active" ui-sref="login">Sign out</a>
         <a class="new-chat">New chat</a>
         <!-- <a class="contact">Contact</a> -->
-        <a class="heading">Welcome to BridgeLabz Chat Kiran{{name}}</a>
+        <a class="heading">Welcome to BridgeLabz Chat {{name}}</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>
@@ -29,7 +28,7 @@
         <section>
           <ol>
             <h3>Chats</h3>
-      
+
             <p>The World is round....</p>
           </ol>
         </section>
