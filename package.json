@@ -9,6 +9,7 @@
   "author": "kiran",
   "license": "ISC",
   "dependencies": {
+    "ajax": "0.0.4",
     "angular": "^1.7.0",
     "angular-animate": "^1.7.7",
     "angular-aria": "^1.7.7",

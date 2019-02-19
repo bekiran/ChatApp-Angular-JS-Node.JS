@@ -86,5 +86,17 @@ module.exports.forgotPassword = (req, res) =>{
 }
 
 
-
+module.exports.getAllUser = (req, res) => {
+    userService.getAllUser((err, data) => {
+        if(err){
+            returnres.status(500), send({
+                message: err
+            });
+        } else {
+            return res.status(200).send({
+                message: data
+            });
+        }
+    })
+}
 

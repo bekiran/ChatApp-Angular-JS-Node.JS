@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 var users = require('../controller/controller');
 var chatController = require("../controller/chatController");
-var auth = require('../authantication/auth');
+var auth = require('../authantication/index');
 
 try{
 
@@ -13,7 +13,7 @@ try{
 }
 catch(err)
 {
-    console.log("err found while sending token");
+    console.log("err found while receving token - authorization.js");
 }
 
 module.exports =router
