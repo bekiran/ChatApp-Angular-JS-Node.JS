@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 var users = require('../controller/controller');
 var chatController = require("../controller/chatController");
-var auth = require('../authantication/index');
+var auth = require('../authantication');
 
 try{
 

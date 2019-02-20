@@ -181,3 +181,119 @@ Not valid email!
 <code>myForm.$error.required = {{!!myForm.$error.required}}</code><br />
 <code>myForm.$error.email = {{!!myForm.$error.email}}</code>
 <br />   */
+
+
+*{
+  box-sizing: border-box;
+  /* width: 100%; */
+  
+}
+
+
+/* .singleChat {
+  font-family: Arial, Helvetica, sans-serif;
+} */
+span{
+  font-size: 60%;
+  float:left;
+  margin-right:90px
+}
+.chat .chatMsg{
+  width: 100%;
+  /* color: red; */
+  padding: 10px;
+  margin:0px,0px,0px;
+  border-radius: 00px;
+  font-size: 20px
+}
+/* .friend .chatMsg{
+ 
+  background-color:green;
+  color:#fff;
+  text-align: left;
+  
+}
+.self .chatMsg{
+  color: rgb(207, 65, 40);
+  text-align: right;
+  background: rgb(141, 212, 150);
+ 
+}
+
+
+
+/* Style the header */
+/* header {
+  background-color: rgb(150, 109, 109);
+  padding: 5px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+} */
+/* .logbutton
+{
+  width: 10%;
+} */
+/* .sendbtn{
+  width: 12%;
+  margin-left: 90%;
+  padding: 0%;
+} */
+
+
+/* Create two columns/boxes that floats next to each other */
+/* nav {
+  float: left;
+  width: 30%;
+  height: 440px; /* only for demonstration, should be removed */
+  /* background: rgb(185, 146, 146);
+  padding: 20px;
+  text-align: left;
+  cursor: pointer;
+  overflow-y:scroll;
+  overflow-x: hidden;
+} */ 
+
+/* Style the list inside the menu */
+/* nav ul {
+  text-align: center;
+}
+
+.gropChat{
+  float:right;
+  width: 70%;
+  height: 100%;
+
+  margin: 0px 0px 0px;
+} */
+
+/* article {
+  float:right;
+  padding: 70px;
+  width: 70%;
+  height: 440px; /* only for demonstration, should be removed */
+  /* background-color: rgba(230, 173, 173, 0.822);
+} */ 
+
+/* .username{
+  margin:0px 10px 0px 0px;
+  color:red
+}
+article section{
+  float:right;
+ 
+  width: 100%;
+   height: 90%;
+  color: rgb(112, 180, 219);
+  overflow-y: scroll;
+  overflow-x: hidden;
+} */
+
+
+/*.text
+{ 
+  width: 87%;
+  margin: 30px 70px 0px 0px;
+  box-sizing: border-box;
+  
+} */

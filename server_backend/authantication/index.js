@@ -3,7 +3,7 @@ var secret = "adcgfft";
 
 try{
     var auth = function(req, res, next) {
-        var token = req.headres["token"];
+        var token = req.headers["token"];
         console.log(token, "token is in auth");
         var response = {
             'message' : "Unauthorised user"

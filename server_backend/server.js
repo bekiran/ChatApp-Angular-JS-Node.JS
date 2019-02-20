@@ -1,9 +1,12 @@
 // 'use strict'
+
 // To include the HTTP module
 const http = require('http');
+
 // To include the File System module
-const fs = require('fs');
-const url = require('url')
+// const fs = require('fs');
+// const url = require('url')
+
 var express = require('express');
 const app = express();
 
@@ -29,44 +32,37 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var expressValidator = require('express-validator')
 app.use(expressValidator());
+
+//checking for events. connecton will be listening for incoming sockets.
 io.on('connection', (socket) => {
     console.log("New user connected");
-
-    so.on('createMessage', (message) => {
+//started listening events. socket.on waits for the event. whenever that event is triggered the callback
+//function is called.
+    socket.on('createMessage', (message) => {
+        //saving message to db
         chatController.message(message, (err, data) => {
             if (err) {
                 console.log(err);
             } else {
                 console.log(message + " in server")
+                //io.emmit is used to emit the message to all sockets connected to it.
                 io.emit('newMessageSingle', message);
             }
         })
+        // socket emmits disconnect event which will be called whenever client disconnected.
         socket.on('disconnect', () => {
             console.log("User is Disconnected")
         });
     });
 });
 
-app.use('/', route);
+app.use('/', route); // calling router
 
 // Import events module
 var events = require('events');
 
 // Create an eventEmitter object
 var eventEmitter = new events.EventEmitter();
-
-
-// creating a jwt token
-// var jwt = require('jwt-simple');
-
-// var payload = { userId: 1 };
-// var secret = 'fe1a1915a379f3be5394b64d14794932';
-// var token = jwt.encode(payload, secret);
-// console.log(token);
-
-// // decoding the generated jwt token
-// var decode = jwt.decode(token, secret);
-// console.log(decode);
 
 const cors = require('cors');
 app.use(cors())
@@ -89,7 +85,8 @@ mongoose.connect(dbConfig.url, {
     console.log("could not connect to the database");
     process.exit();
 });
-server.listen(3000, () => {
+app.use(express.static('client_frontend'));
+server.listen(port, () => {
     console.log("Server is listening on port 3000");
 });
 

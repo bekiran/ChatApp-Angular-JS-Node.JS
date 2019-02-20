@@ -30,6 +30,16 @@ exports.forgotPassword = (req, callback) => {
     })
 }
 
+exports.resetPassword = (req, callback) => {
+    userModel.register(req, (err, data) =>{
+        if(err) {
+            return callback(err);
+        }else{
+            return callback(null, data);
+        }
+    })
+} 
+
 exports.getAllUser = (req, callback) => {
     userModel.getAllUser(req, (err, data) =>{
         if(err) {

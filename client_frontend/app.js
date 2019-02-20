@@ -12,14 +12,14 @@ app.config(function($stateProvider, $urlRouterProvider){
     $stateProvider.state('forgotPassword', {
         url: '/forgotPassword',
         templateUrl: 'templates/forgotPassword.html',
-        // controller: 'controlLogin'
+        controller: 'controlForgotPassword'
 
     })
 
     $stateProvider.state('resetPassword', {
         url: '/resetPassword',
         templateUrl: 'templates/resetPassword.html',
-        // controller: 'controlLogin'
+        controller: 'controlRestPassword'
 
     })
 

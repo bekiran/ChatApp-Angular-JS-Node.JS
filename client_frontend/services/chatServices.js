@@ -2,31 +2,32 @@ app.service('chatServices', function ($http) {
     try {
         this.getAllUsers = function ($scope, usertoken) {
             $http({
-                method: 'GET',
-                url: 'http://localhost:3000/auth/getAllUser',
+                method: 'GET',//assigning value to http proprties 
+                url: 'http://localhost:3000/routes/getAllUser',
                 headers: {
                     'token': usertoken,
                 }
             }).then(
-                function successCallback(response) {
+                function successCallback(response) {//call back function of http sevice
                     $scope.allUser = response.data.message;
                 },
                 function errorCallback(response) {
-                    console.log('register Unsuccessful');
+                    console.log("register Unsuccessfull ");
                     console.log(response);
                 }
             );
         }
-    } catch (error) {
-        console.log("error found in getting user");
+    }
+    catch (err) {
+        console.log("error found here in getting users")
     }
     try {
         this.getUserMsg = function ($scope) {
             var arr = [];
-            var usertoken = localStorage.getItem('token')
+            var usertoken = localStorage.getItem('token');
             $http({
-                method: 'GET',
-                url: 'http://http://localhost:3000/auth/getUserMsg',
+                method: 'GET',//assigning value to http proprties 
+                url: 'http://localhost:3000/auth/getUserMsg',//assigning value to http proprties 
                 headers: {
                     'token': usertoken,
                 }
@@ -37,23 +38,26 @@ app.service('chatServices', function ($http) {
                     for (var i = 0; i < (response.data.message).length; i++) {
                         a = response.data.message[i];
 
-                        if (((localStorage.getItem('userid') == a.senderUserId) && (localStorage.getItem('ruserId') == a.reciveUserId) || ((localStorage.getItem('userid') == a.reciveUserId) && localStorage.getItem('ruserId') == a.senderUserId))) 
-                        {
-                            console.log("local user is", localStorage.getItem('userid'), "a user is", a.senderUserId, "local rcvrid is", localStorage.getItem('ruserId'), "reciver is", a.reciveUserId);
-                            arr.push(a);
+                        if (((localStorage.getItem('userid') == a.senderUserId) && (localStorage.getItem('ruserId') == a.recieverUserId)) || ((localStorage.getItem('userid') == a.recieverUserId && localStorage.getItem('ruserId') == a.senderUserId))) {
+                            console.log("local user is ", localStorage.getItem('userid'), "a user is ", a.senderUserId, " local rcvrid is ", localStorage.getItem('ruserId'), "  reciver is ", a.recieverUserId);
+                            arr.push(a);//pushing all message to array
                         }
+
                     }
                     $scope.allUserArr = arr;
-                    console.log("User msg sucessfull ", arr)
+                    console.log("Users msg successfull ", arr);
+
                 },
                 function errorCallback(response) {
-                    console.log('meassage unsuccessful');
+                    console.log("Unsuccessfull ");
                     console.log(response);
+
                 }
             );
         }
-    } catch (error) {
-        console.log("error found in getting message")
-
     }
+    catch (err) {
+        console.log("founr error in getting message")
+    }
+
 })

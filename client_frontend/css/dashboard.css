@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+  }
+.chat .chatMsg{
+    width: 100%;
+    padding: 10px;
+    margin: 0px, 0px, 0px;
+    border-radius: 05%; 
+}
+.friend .chatMsg{
+    background-color: rgb(236, 156, 37);
+    color: #fff;
+    text-align: left;   
+}
+.column1 {
+    float: left;
+    width: 20%;
+    border-radius: 2%;
+    padding: 10px;
+    height: 70%; /* Should be removed. Only for demonstration */
+    background: linear-gradient(to bottom, rgba(237, 247, 180, 0.8) 0%, rgba(186, 223, 240, 0.6) 100%);
+  }
+
+  .column {
+    float: right;
+    width: 79.5%;
+    padding: 10px;
+    border-radius: 1%;
+    height: 70%; /* Should be removed. Only for demonstration */
+    background: linear-gradient(to bottom, rgba(97, 192, 230, 0.8) 0%, rgba(186, 223, 240, 0.6) 100%);
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .search input{
+		outline: none;
+		border: none;
+		background: none;
+  }
+  
+  .search{
+    position: relative;
+  }
+  .search input[type=submit]{
+    font-family: 'Times New Roman';
+    position: absolute;
+    right: 25px;
+    top: 27px;
+    color: rgb(43, 40, 40);
+  }
+  .search input[type=search]{
+    background-color: #33210a;
+    border-radius: 3px;
+    padding: 10px;
+    width: 90%;
+    box-sizing: border-box;
+    @mr:10px;
+    margin: 1.5;
+    color: #fff;
+  }
+  
+.list-header{
+  text-align: center;
+}
+
+.write-form{
+  height: 150px;
+}
+	
+.textarea{
+  height:75px;
+ margin: 17px 5%;
+ width: 90%;
+ outline: none;
+ padding: 15px;
+ border: none;
+ border-radius: 3px;
+ resize: none;
+}
+.avatar>img{
+	border-color: #62bf6e;
+	margin: 10px;
+	margin-right: 5px;
+
+}
+.avatar{
+	display: inline-block;
+}
+
+
+.send{
+	color: #7ac5ef;
+	text-transform: uppercase;
+	font-weight: 700;
+	float: right;
+	margin-right: 5%;
+	cursor: pointer;
+  user-select:none;
+}
+i.fa-file-o{
+	margin-left: 15px;
+}
+i.fa-picture-o{
+	margin-left: 5%;
+}
+
+
+

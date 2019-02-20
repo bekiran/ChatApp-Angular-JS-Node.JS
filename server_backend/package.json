@@ -17,6 +17,7 @@
     "jwt-simple": "^0.5.5",
     "mongoose": "^5.4.10",
     "nodemailer": "^5.1.1",
-    "nodemailer-express-handlebars": "^3.0.0"
+    "nodemailer-express-handlebars": "^3.0.0",
+    "nodemon": "^1.18.10"
   }
 }
