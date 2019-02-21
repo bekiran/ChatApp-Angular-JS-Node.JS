@@ -135,12 +135,17 @@ module.exports.resetPassword = (req, res) => {
 
 
 
-exports.getAllUser = (req, callback) => {
-    userModel.getAllUser(req, (err, data) => {
+exports.getAllUser = (req,res) => {
+    userService.getAllUser(req, (err, data) => {
+        var response = {};
         if (err) {
             return callback(err);
         } else {
-            return callback(null, data)
+          //  console.log("log==>",data);
+            response.success = true;
+            response.error = data;
+            res.status(200).send(response);
+        
         }
     })
 }

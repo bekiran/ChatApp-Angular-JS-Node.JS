@@ -1,4 +1,4 @@
-var app = angular.module('chatapp',['ui.router']);
+var app = angular.module('chatapp',['ui.router','btford.socket-io']);
 
 app.config(function($stateProvider, $urlRouterProvider){
 
@@ -32,6 +32,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     .state('dashboard',{
         url: '/dashboard',
         templateUrl: 'templates/dashboard.html',
+        controller: 'chatController'
     });
      $urlRouterProvider.otherwise('login');
 

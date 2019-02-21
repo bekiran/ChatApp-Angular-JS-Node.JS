@@ -15,9 +15,11 @@
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
     "jwt-simple": "^0.5.5",
+    "mongodb-schema": "^8.2.3",
     "mongoose": "^5.4.10",
     "nodemailer": "^5.1.1",
     "nodemailer-express-handlebars": "^3.0.0",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "socket.io": "^2.2.0"
   }
 }
