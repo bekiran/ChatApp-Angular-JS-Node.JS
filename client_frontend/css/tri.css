@@ -3,7 +3,7 @@
 
 /* ---------- GENERAL ---------- */
 
-body {
+/* body {
 	background: #e9e9e9;
 	color: #9a9a9a;
 	font: 100%/1.5em "Droid Sans", sans-serif;
@@ -52,15 +52,15 @@ input {
 p { margin: 0; }
 
 .clearfix { *zoom: 1; } /* For IE 6/7 */
-.clearfix:before, .clearfix:after {
+/* .clearfix:before, .clearfix:after {
     content: "";
     display: table;
 }
-.clearfix:after { clear: both; }
+.clearfix:after { clear: both; } */
 
 /* ---------- LIVE-CHAT ---------- */
 
-#live-chat {
+/* #live-chat {
 	bottom: 0;
 	font-size: 12px;
 	right: 24px;
@@ -168,4 +168,4 @@ p { margin: 0; }
 .chat-feedback {
 	font-style: italic;	
 	margin: 0 0 0 80px;
-}
+} */

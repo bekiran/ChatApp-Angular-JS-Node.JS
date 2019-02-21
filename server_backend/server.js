@@ -7,12 +7,14 @@ const http = require('http');
 // const fs = require('fs');
 // const url = require('url')
 
+
+// to include all modules or all files
 var express = require('express');
 const app = express();
 
 var socketIO = require('socket.io');
 var chatController = require('./controller/chatController');
-const server = http.createServer(app);
+const server = require('http').createServer(app);
 var io = socketIO(server);
 
 //port number
@@ -86,7 +88,7 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 app.use(express.static('client_frontend'));
-server.listen(port, () => {
+server.listen(process.env.PORT || 3000, () => {
     console.log("Server is listening on port 3000");
 });
 

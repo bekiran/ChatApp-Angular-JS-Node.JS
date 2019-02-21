@@ -19,7 +19,7 @@
 
         <a class="new-chat">New chat</a>
         <!-- <a class="contact">Contact</a> -->
-        <a class="heading">Welcome to ChatApp {{currUserName}}</a>
+        <a class="heading">Welcome to ChatApp {{getAllUser}}</a>
         <!-- <span>Welcome to WeChat {{currUserName}}</span> -->
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
@@ -37,7 +37,7 @@
           <nav>
               <ol>
                 <!-- Contacts -->
-                <header> {{getAllUsers}}</header>
+                <header> {{getAllUser}}</header>
               </ol>
               <p ng-repeat="x in allUsers" ng-click="person(x)" ng-show="currUserName!=x.firstname" {{x.firstname}}></p>
             </nav>

@@ -13,7 +13,7 @@ var chatSchema = new mongoSchema({
     });
 
 function chatModel() {
-
+    
 }
 var chat = mongoose.model('chatInfo', chatSchema);
 try {

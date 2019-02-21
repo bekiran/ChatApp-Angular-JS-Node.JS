@@ -123,7 +123,7 @@ usermodel.prototype.resetPassword = (body, callback) => {
 usermodel.prototype.getAllUser = (callback) => {
     user.find({}, (err, data)=>{
        if(err){
-           callback(err)
+           callback("error is in model" + err)
        }else{
            callback(null , data);
        }
