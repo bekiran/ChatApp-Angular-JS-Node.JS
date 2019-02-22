@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" />
+    <link rel="stylesheet" href="../css/tri.css" type="text/css" />
+</head>
+
+<body ng-controller="chatControl" class="dashboard" >
+    <header>
+        <div class="topnav" id="myTopnav">
+            <a href="#home" class="active" ui-sref="login">Sign out</a>
+
+            <a class="new-chat">New chat</a>
+            <a class="contact">Contact</a> 
+            <a class="heading">Welcome to ChatApp {{currUserName}}</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <p class="con-list">Contact List</p>
+                
+
+            </ul>
+            <p ng-repeat="x in allUser" ng-click="person(x)" ng-show="currUserName!=x.firstname">
+                {{x.firstname}}</p>
+                <!-- <a class="">{{getAllUsers}}</a> -->
+        </nav>
+
+        <article>
+
+            <div class="groupChat">
+                <p class="username">{{recieverUserName}}</p>
+            </div>
+            <section>
+                <form>
+                    <div class="chatLogs" ng-repeat="chat in allUserArr">
+                        <div class="chat friend" ng-show="currUser != chat.senderUserId">
+                            <p class="chatMsg"> {{chat.message}}</p>
+                        </div>
+                        <div class="chat self" ng-show="currUser == chat.senderUserId">
+                            <!-- <div class="user-photo"> <img src=""></div> -->
+                            <p class="chatMsg"> {{chat.message}}</p>
+                        </div>
+                    </div>
+            </section>
+
+            <div>
+                <textarea ng-model="message" ng-keyup="$event.keyCode == 13 && sendmessage()"  class="text" placeholder="Type to text"></textarea>
+                <button type="button"  ng-click=sendmessage();  class="sendclick">Send</button>
+            </div>
+            </form>
+        </article>
+
+    </section>
+   
+
+</body>
+
+</html>
+
+<!-- dashboard -->

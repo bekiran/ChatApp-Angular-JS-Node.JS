@@ -5,6 +5,6 @@ app.controller('controlForgotPassword', function ($scope, serviceForgotPassword)
             'email': $scope.email,
             // 'password': $scope.password
         }
-        serviceLogin.forgotPassword(data, $scope);
+        serviceForgotPassword.forgotPassword(data, $scope);
     }
 });

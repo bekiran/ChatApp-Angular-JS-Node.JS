@@ -24,7 +24,7 @@ span{
 	text-align: left;
 }
 .self .chatMsg{
-	color: rgb(207, 65, 40);
+	color: rgb(73, 7, 134);
 	text-align: right;
 	background: linear-gradient(to bottom, rgba(237, 247, 180, 0.8) 0%, rgba(186, 223, 240, 0.6) 100%);
 	border-radius: 5%;
@@ -43,7 +43,7 @@ span{
 }
   
   
-  /* Create two columns/boxes that floats next to each other */
+  /* Users list. Create two columns/boxes that floats next to each other.*/
 nav {
 	float: left;
 	border-radius: 3%;
@@ -55,6 +55,11 @@ nav {
 	cursor: pointer;
 	overflow-y:scroll;
 	overflow-x: scroll;
+	font-family: 'Times New Roman';
+	font-weight: bold;
+	color: #1a237e;
+	font-style: italic;
+	text-align: center
 	
 }
   
@@ -73,7 +78,7 @@ nav ul {
 article {
 	float:right;
 	padding: 100px;
-	width: 70%;
+	width: 71%;
 	height: 600px; /* only for demonstration, should be removed */
 	background: linear-gradient(to bottom, rgba(53, 221, 243, 0.8) 0%, rgba(186, 223, 240, 0.6) 100%);
 	border-radius: 2%
@@ -81,7 +86,10 @@ article {
   
 .username{
 	margin:0px 10px 0px 0px;
-	color:rgb(250, 194, 40)
+	color:rgb(238, 52, 167);
+	font-family: 'Times New Roman';
+	font-weight: bold;
+	font-style: italic
 }
 article section{
 	float:right;   

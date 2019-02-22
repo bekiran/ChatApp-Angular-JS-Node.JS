@@ -6,16 +6,55 @@ const http = require('http');
 // To include the File System module
 // const fs = require('fs');
 // const url = require('url')
-
-
 // to include all modules or all files
 var express = require('express');
+var socketIO = require('socket.io');
+
 const app = express();
 
-var socketIO = require('socket.io');
 var chatController = require('./controller/chatController');
-const server = require('http').createServer(app);
-var io = socketIO(server);
+
+// const server = http.createServer(app);
+var io = require('socket.io')(server);
+
+
+
+// var io = require('socket.io')(3000);
+ 
+// io.sockets.on('connection', function (socket) {
+//     socket.on('echo', function (data) {
+//         socket.emit('echo', data);
+//     });
+ 
+//     socket.on('echo-ack', function (data, callback) {
+//         callback(data);
+//     });
+// });
+
+
+//checking for events. connecton will be listening for incoming sockets.
+io.on('connection', function(socket) {
+    console.log("Connected socket!");
+//started listening events. socket.on waits for the event. whenever that event is triggered the callback
+//function is called.
+    socket.on('createMessage', function(message) {
+        //saving message to db
+        chatController.message(message, (err, data) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log(message + " in server")
+                //io.emmit is used to emit the message to all sockets connected to it.
+                io.emit('newMessageSingle', message);
+            }
+        })
+        // socket emmits disconnect event which will be called whenever client disconnected.
+        socket.on('disconnect', function() {
+            console.log("Socket Disconnected!")
+        });
+    });
+});
+
 
 //port number
 const port = 3000
@@ -35,31 +74,14 @@ app.use(bodyParser.json());
 var expressValidator = require('express-validator')
 app.use(expressValidator());
 
-//checking for events. connecton will be listening for incoming sockets.
-io.on('connection', (socket) => {
-    console.log("New user connected");
-//started listening events. socket.on waits for the event. whenever that event is triggered the callback
-//function is called.
-    socket.on('createMessage', (message) => {
-        //saving message to db
-        chatController.message(message, (err, data) => {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log(message + " in server")
-                //io.emmit is used to emit the message to all sockets connected to it.
-                io.emit('newMessageSingle', message);
-            }
-        })
-        // socket emmits disconnect event which will be called whenever client disconnected.
-        socket.on('disconnect', () => {
-            console.log("User is Disconnected")
-        });
-    });
-});
 
 app.use('/', route); // calling router
 
+app.use(express.static('client_frontend'));
+
+var server = app.listen(3000, () =>{
+    console.log("Server is listening to port 3000");
+})
 // Import events module
 var events = require('events');
 
@@ -87,16 +109,5 @@ mongoose.connect(dbConfig.url, {
     console.log("could not connect to the database");
     process.exit();
 });
-app.use(express.static('client_frontend'));
-server.listen(process.env.PORT || 3000, () => {
-    console.log("Server is listening on port 3000");
-});
 
-const nodemailer = require('nodemailer')
 
-app.get('/forgotPassword', function (req, res) {
-    res.send('<form action="/passwordreset" method="POST">' +
-        '<input type="email" name="email" value="" placeholder="Enter your email address..." />' +
-        '<input type="submit" value="Reset Password" />' +
-        '</form>');
-});

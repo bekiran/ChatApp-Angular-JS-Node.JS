@@ -9,7 +9,9 @@ app.service('chatServices', function ($http) {
                 }
             }).then(
                 function successCallback(response) {//call back function of http sevice
-                    $scope.allUser = response.data.message;
+                    $scope.allUser = response.data.result;
+                    console.log(response.data.result);
+                    
                 },
                 function errorCallback(response) {
                     console.log("register Unsuccessfull ");
@@ -33,9 +35,9 @@ app.service('chatServices', function ($http) {
                 }
             }).then(
                 function successCallback(response) {
-                    console.log(response.data.message[0]);
+                    console.log(response.data.message);
 
-                    for (var i = 0; i < (response.data.message).length; i++) {
+                    for (var i = 0; i < (response.data.message); i++) {  //(response.data.message).length *change was done
                         a = response.data.message[i];
 
                         if (((localStorage.getItem('userid') == a.senderUserId) && (localStorage.getItem('ruserId') == a.recieverUserId)) || ((localStorage.getItem('userid') == a.recieverUserId && localStorage.getItem('ruserId') == a.senderUserId))) {

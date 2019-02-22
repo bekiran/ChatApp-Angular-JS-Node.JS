@@ -9,7 +9,7 @@ var auth = require('../authantication');
 try{
 
     router.get('/getAllUser', auth, users.getAllUser);
-    router.get('/getUserMsg', auth, chatController.getUSerMsg);
+    router.get('/getUserMsg', auth, chatController.getUserMsg);
 }
 catch(err)
 {

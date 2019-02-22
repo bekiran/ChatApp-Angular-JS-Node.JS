@@ -143,7 +143,7 @@ exports.getAllUser = (req,res) => {
         } else {
           //  console.log("log==>",data);
             response.success = true;
-            response.error = data;
+            response.result = data;
             res.status(200).send(response);
         
         }

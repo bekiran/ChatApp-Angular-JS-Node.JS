@@ -38,6 +38,17 @@ app.config(function($stateProvider, $urlRouterProvider){
 
     
 });
+
+
+// var socket = io('ws://localhost:3000', {transports: ['websocket']});
+// socket.on('connect', function () {
+//   console.log('connected!');
+//   socket.emit('greet', { message: 'Hello Mr.Server!' });
+// });
+// socket.on('respond', function (data) {
+//   console.log(data);
+// });
+
 app.service('SocketService', ['socketFactory', function SocketService(socketFactory){
     return socketFactory({
         ioSocket: io.connect('http://localhost:3000')  //connecting socket io
