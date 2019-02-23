@@ -1,36 +1,48 @@
+/***
+ * purpose: Server application starts from here
+ * 
+ * file: server.js
+ * @overview : import all required packages here.
+ * @author: bekiranabbi@gmail.com
+ * @version : 1.0
+ * @since : 07.02.2019
+ * 
+ */
+
 // 'use strict'
+
+// to include all modules or all files
+//which allows us to support HTTp protocol and socket.IO
+var express = require('express');
+const app = express();
 
 // To include the HTTP module
 const http = require('http');
-
-// To include the File System module
-// const fs = require('fs');
-// const url = require('url')
-// to include all modules or all files
-var express = require('express');
 var socketIO = require('socket.io');
 
-const app = express();
 
 var chatController = require('./controller/chatController');
+//port number
+const port = 3000
+const database = require('./config/database.config')
+const mongoose = require('mongoose');
+const route = require('../server_backend/routes/routes');
+/*body-parser parses your request and converts it into a 
+format from which you can easily extract relevant information that you may need.*/
+const bodyParser = require('body-parser');
+
+/*Parses the text as URL encoded data (which is how browsers tend to send form data from regular forms set to POST)
+and exposes the resulting object (containing the keys and values) on req.body.*/
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Parses the text as JSON and exposes the resulting object on req.body.
+app.use(bodyParser.json());
+var expressValidator = require('express-validator')
+app.use(expressValidator());
+
 
 // const server = http.createServer(app);
 var io = require('socket.io')(server);
-
-
-
-// var io = require('socket.io')(3000);
- 
-// io.sockets.on('connection', function (socket) {
-//     socket.on('echo', function (data) {
-//         socket.emit('echo', data);
-//     });
- 
-//     socket.on('echo-ack', function (data, callback) {
-//         callback(data);
-//     });
-// });
-
 
 //checking for events. connecton will be listening for incoming sockets.
 io.on('connection', function(socket) {
@@ -55,26 +67,6 @@ io.on('connection', function(socket) {
     });
 });
 
-
-//port number
-const port = 3000
-const database = require('./config/database.config')
-const mongoose = require('mongoose');
-const route = require('../server_backend/routes/routes');
-/*body-parser parses your request and converts it into a 
-format from which you can easily extract relevant information that you may need.*/
-const bodyParser = require('body-parser');
-
-/*Parses the text as URL encoded data (which is how browsers tend to send form data from regular forms set to POST)
-and exposes the resulting object (containing the keys and values) on req.body.*/
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// Parses the text as JSON and exposes the resulting object on req.body.
-app.use(bodyParser.json());
-var expressValidator = require('express-validator')
-app.use(expressValidator());
-
-
 app.use('/', route); // calling router
 
 app.use(express.static('client_frontend'));
@@ -82,11 +74,7 @@ app.use(express.static('client_frontend'));
 var server = app.listen(3000, () =>{
     console.log("Server is listening to port 3000");
 })
-// Import events module
-var events = require('events');
 
-// Create an eventEmitter object
-var eventEmitter = new events.EventEmitter();
 
 const cors = require('cors');
 app.use(cors())
@@ -109,5 +97,4 @@ mongoose.connect(dbConfig.url, {
     console.log("could not connect to the database");
     process.exit();
 });
-
 

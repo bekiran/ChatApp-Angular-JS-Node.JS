@@ -7,11 +7,11 @@ exports.addMessage = (req, callback) => {
     chatModel.addMessage(req, (err, data) => {
 
         if (err) {
-            console.log("err on service file");
+            console.log("err on service file", err);
             callback(err)
         } else {
 
-            console.log("data on service file");
+            console.log("data on service file", data);
             callback(null, data)
         }
 

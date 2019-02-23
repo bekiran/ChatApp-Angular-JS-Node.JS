@@ -10,9 +10,9 @@ exports.sendEMailFunction = (url,) => {
     });
     const mailOptions = {
         from:'dushyanthabbi02@gmail.com',    
-        to: 'dushyanthabbi02@gmail.com',
-        subject: 'To send mail throw node',      
-        text: 'Your Email verifaction link is:\n\n'+url 
+        to: 'bekiranabbi@gmail.com',
+        subject: 'Chat-app password reset link ',      
+        text: 'Please go through the e-mail verifaction link provided in this mail:\n\n'+url 
     };
     transporter.sendMail(mailOptions,(err,info) => {
        

@@ -2,6 +2,7 @@ var jwt = require('jsonwebtoken');
 var secret = "adcgfft";
 try{
 var auth = function (req, res, next) {
+    console.log("In auth");
     var token = req.headers["token"];
     console.log(token ,"token is in auth");
     var response = {

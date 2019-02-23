@@ -37,7 +37,7 @@ app.service('chatServices', function ($http) {
                 function successCallback(response) {
                     console.log(response.data.message);
 
-                    for (var i = 0; i < (response.data.message); i++) {  //(response.data.message).length *change was done
+                    for (let i = 0; i < (response.data.message); i++) {  //(response.data.message).length *change was done
                         a = response.data.message[i];
 
                         if (((localStorage.getItem('userid') == a.senderUserId) && (localStorage.getItem('ruserId') == a.recieverUserId)) || ((localStorage.getItem('userid') == a.recieverUserId && localStorage.getItem('ruserId') == a.senderUserId))) {
