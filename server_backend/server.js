@@ -9,24 +9,19 @@
  * 
  */
 
-// 'use strict'
+
+ // To include the HTTP module
+const http = require('http');
 
 // to include all modules or all files
 //which allows us to support HTTp protocol and socket.IO
-var express = require('express');
+const express = require('express');
 const app = express();
 
-// To include the HTTP module
-const http = require('http');
-var socketIO = require('socket.io');
+// app.listen(3000, () => {
+//     console.log('Server started!');
+// });
 
-
-var chatController = require('./controller/chatController');
-//port number
-const port = 3000
-const database = require('./config/database.config')
-const mongoose = require('mongoose');
-const route = require('../server_backend/routes/routes');
 /*body-parser parses your request and converts it into a 
 format from which you can easily extract relevant information that you may need.*/
 const bodyParser = require('body-parser');
@@ -40,16 +35,30 @@ app.use(bodyParser.json());
 var expressValidator = require('express-validator')
 app.use(expressValidator());
 
+//imporing socket io to get connection between client and server
+var socketIO = require('socket.io');
+var chatController = require('./controller/chatController');
+
+// const server = http.createServer(app)
+
+const mongoose = require('mongoose');
+const route = require('../server_backend/routes/routes');
+
+var server = app.listen(3000, () => {
+    console.log("Server is listening to port 3000");
+})
+
 
 // const server = http.createServer(app);
-var io = require('socket.io')(server);
+const io = require('socket.io')(server);
+
 
 //checking for events. connecton will be listening for incoming sockets.
-io.on('connection', function(socket) {
+io.on('connection', function (socket) {
     console.log("Connected socket!");
-//started listening events. socket.on waits for the event. whenever that event is triggered the callback
-//function is called.
-    socket.on('createMessage', function(message) {
+    //started listening events. socket.on waits for the event. whenever that event is triggered the callback
+    //function is called.
+    socket.on('createMessage', function (message) {
         //saving message to db
         chatController.message(message, (err, data) => {
             if (err) {
@@ -61,7 +70,7 @@ io.on('connection', function(socket) {
             }
         })
         // socket emmits disconnect event which will be called whenever client disconnected.
-        socket.on('disconnect', function() {
+        socket.on('disconnect', function () {
             console.log("Socket Disconnected!")
         });
     });
@@ -71,20 +80,17 @@ app.use('/', route); // calling router
 
 app.use(express.static('client_frontend'));
 
-var server = app.listen(3000, () =>{
-    console.log("Server is listening to port 3000");
-})
 
 
 const cors = require('cors');
 app.use(cors())
 
-// const server = http.createServer(app);
-var io = socketIO(server);
+
+// const server= http.createServer(app);
+// var io = socketIO(server);
 
 
 const dbConfig = require('./config/database.config');
-const mongo = require('mongodb');
 
 app.use(express.static('../client_frontend'));
 
