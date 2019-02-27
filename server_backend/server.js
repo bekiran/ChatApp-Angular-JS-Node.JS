@@ -14,7 +14,7 @@
 const http = require('http');
 
 // to include all modules or all files
-//which allows us to support HTTp protocol and socket.IO
+//which allows us to support HTTP protocol and socket.IO
 const express = require('express');
 const app = express();
 
